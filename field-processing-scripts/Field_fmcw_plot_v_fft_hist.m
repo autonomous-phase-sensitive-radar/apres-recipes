@@ -1,4 +1,4 @@
-%% FMCW Plot V FFT Histograms
+ %% FMCW Plot V FFT Histograms
 % 
 % adapted from fmcw_plot & related scripts
 %
@@ -15,7 +15,7 @@
 % Elizabeth Case, April 2022
 %% Settings
 maxchirps = 100;
-depthset = 700;
+depthset = 1500;
 pad = 2;
 win = @blackman;
 
@@ -104,8 +104,8 @@ win = @blackman;
                 plot(rc,20*log10(abs(su)));
                 xlim([0 depthset])
 
-                if any(round(vdat.vif,1)==0) || any(round(vdat.vif,1)==2.5)
-                    disp(['!!!!!!! The signal has been clipped in ' vdat.chirpname '!!!!!!!!']); 
+                if any(round(vdat.vif,2)==0) || any(round(vdat.vif,2)==2.5)
+                    disp(['!!!!!!! The signal might be clipped in ' vdat.chirpname '!!!!!!!!']); 
                 end
                     
         end
