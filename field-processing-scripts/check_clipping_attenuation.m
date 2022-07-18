@@ -9,17 +9,22 @@
 
 %% User parameters
 % Change this directory to the SD card (has all the dated subfolders inside)
-myFolder = '/Users/georgelu/Documents/ApRES burn-in tests/';
+myFolder = '/Users/georgelu/Downloads/S30_201808/';
 
 % Set a maximum number of plots to avoid too many popping up
 max_plots = 20; 
 
+% Set how many files and/or bursts to skip over each iteration (for efficiency)
+% 1 would mean no skipping, 2 would mean every other one
+file_spacing = 2;
+burst_spacing = 2;
+
 % Choose whether to detect clipping (1) or too much attenuation (0)
-clipping = 1; 
+clipping = 0; 
 
 % Pick a max amplitude deemed to be too attenuated (clipping is at
 % amplitude of 1.25)
-amplitude = 0.5; 
+amplitude = 0.25; 
 
 % Additional settings that aren't as important
 maxchirps = 100;
@@ -49,9 +54,9 @@ for i=1:length(subfolders)
     % Get .DAT files in each folder
     fileList = dir(filePattern);
     % Iterate through all the files in each subfolder
-    for j=1:length(fileList)
+    for j=1:file_spacing:length(fileList)
         filename = fileList(j).name;
-        burstlist = 1:100; 
+        burstlist = 1:burst_spacing:100; 
         chirplist = 1:maxchirps;
         getBurst = 1;
         BurstNo = 0;
