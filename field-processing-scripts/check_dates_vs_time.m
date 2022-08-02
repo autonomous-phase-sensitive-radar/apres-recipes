@@ -1,3 +1,4 @@
+function check_dates_vs_time(myFolder,resolution)
 %% Check dates and/or times of measurements
 %
 % Run this script on the SD card folder to identify potential data gaps
@@ -5,13 +6,13 @@
 
 %% User parameters
 % Change this directory to the SD card (has all the dated subfolders inside)
-myFolder = '/Users/georgelu/Downloads/S30_201808/';
+%myFolder = '/Users/georgelu/Downloads/S30_201808/';
 
 % Determine if you want to check every burst (option 0 - every 15 minutes) 
 % or date of every file, which takes multiple bursts (option 1 - approximately 1 day). 
 % The first takes longer whereas the second will only help identify
 % much larger gaps
-resolution = 0; % 0=fine, 1 = coarse
+%resolution = 0; % 0=fine, 1 = coarse
 
 %% Rest of script
 % Check if the folder exists

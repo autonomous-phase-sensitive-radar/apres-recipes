@@ -19,8 +19,8 @@ The directory structure should look like:
 
 All the relevant files outside of the main field processing scripts (of which this instruction document is a part of) should already be on the toughbook used in the May 2022 field trip to Ilulissat. Consequently, MATLAB and its relevant toolboxes should not need to be reinstalled, though it is important to check that it still works offline and that the license is valid. 
 
-### Running the scripts:
-There are 3 in-field scripts to run: `check_dates_vs_time.m`, `check_clipping_attenuation.m`, and `check_strain_rate.m`. They are listed in order of importance/order to run. Their individual instructions are as follows.
+### Running the scripts individually:
+There are 3 functions scripts to run: `check_dates_vs_time.m`, `check_clipping_attenuation.m`, and `check_strain_rate.m`. They are listed in order of importance/order to run. Their individual instructions are as follows.
 
 check_dates_vs_time.m: This script checks to make sure there are no glaring data gaps. It has two settings that allow for either a quick coarse check (in field) or a longer fine check (in town). 
 - After inserting the SD card, open the script, and on line 8, set the variable `myFolder` to the full path to the SD card (including the SD card itself). 

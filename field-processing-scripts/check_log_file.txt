@@ -1,0 +1,78 @@
+Opening file:DATA1990-01-01-0000.DAT
+Opening file:DATA2022-02-16-1729.DAT
+Opening file:DATA2022-02-17-1640.DAT
+Opening file:DATA2022-02-18-1740.DAT
+Opening file:DATA2022-02-21-1128.DAT
+Opening file:DATA2022-03-02-1549.DAT
+Elapsed time is 2.752443 seconds.
+Opening file:DATA1990-01-01-0000.DAT-Burst0
+Opening file:DATA1990-01-01-0000.DAT-Burst10
+Opening file:DATA1990-01-01-0000.DAT-Burst20
+Opening file:DATA1990-01-01-0000.DAT-Burst30
+Opening file:DATA1990-01-01-0000.DAT-Burst40
+Opening file:DATA1990-01-01-0000.DAT-Burst50
+Opening file:DATA1990-01-01-0000.DAT-Burst60
+Opening file:DATA1990-01-01-0000.DAT-Burst70
+Opening file:DATA1990-01-01-0000.DAT-Burst80
+Opening file:DATA1990-01-01-0000.DAT-Burst90
+99 burst(s) found in file
+Opening file:DATA2022-02-16-1729.DAT-Burst0
+9 burst(s) found in file
+Opening file:DATA2022-02-18-1740.DAT-Burst0
+9 burst(s) found in file
+Opening file:DATA2022-02-21-1128.DAT-Burst0
+!!!!!!! The signal might be clipped in DATA2022-02-21-1128.DAT b:10 c: avg5+-4dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA1990-01-01-0000.DAT-Burst0
+!!!!!!! The signal might be too attenuated in DATA1990-01-01-0000.DAT b:10 c: avg15+-4dB !!!!!!!!
+Moving to look at next file
+!!!!!!! The signal might be too attenuated in DATA1990-01-01-0000.DAT b:10 c: avg5+-14dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2022-02-16-1729.DAT-Burst0
+9 burst(s) found in file
+Opening file:DATA2022-02-18-1740.DAT-Burst0
+9 burst(s) found in file
+Opening file:DATA2022-02-21-1128.DAT-Burst0
+Opening file:DATA2022-02-21-1128.DAT-Burst10
+19 burst(s) found in file
+Percentage of checked bursts clipped:5
+Percentage of checked bursts with high attenuation:50
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_strain_rate
+ 
+Using files:
+Filename                                  Date/Time
+DATA1990-01-01-0000   01-Jan-1990 00:00:07
+DATA1990-01-01-0000   01-Jan-1990 00:05:01
+Time interval: 0.0034028 days
+ 
+Warning: multiple attenuator settings found file DATA1990-01-01-0000. Keeping first set only.
+Warning: multiple attenuator settings found file DATA1990-01-01-0000. Keeping first set only.
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_strain_rate
+ 
+Using files:
+Filename                                  Date/Time
+DATA2022-03-02-1549   02-Mar-2022 15:49:50
+DATA2022-03-02-1549   02-Mar-2022 16:04:21
+Time interval: 0.010081 days
+ 
+Warning: multiple attenuator settings found file DATA2022-03-02-1549. Keeping first set only.
+Warning: multiple attenuator settings found file DATA2022-03-02-1549. Keeping first set only.
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_strain_rate
+ 
+Using files:
+Filename                                  Date/Time
+DATA1990-01-01-0000   01-Jan-1990 00:00:07
+DATA2022-03-02-1549   02-Mar-2022 15:49:50
+Time interval: 11748.6595 days
+ 
+Warning: multiple attenuator settings found file DATA1990-01-01-0000. Keeping first set only.
+Warning: multiple attenuator settings found file DATA2022-03-02-1549. Keeping first set only.
+Using user defined max fit depth 1300

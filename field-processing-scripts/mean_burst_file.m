@@ -12,7 +12,7 @@ vdats = Field_burst_split_by_att(vdat);
 vdat = Field_burst_mean(vdats(AttNum));
 
 % Now iterate
-for k = 2:max_bursts % arbitrary max of 100, though our files
+for k = 2:max_bursts % arbitrary max of 100
     vdat_temp = Field_load(filename,k);
     if vdat_temp.Code == -4 % burst not found in file
         break;

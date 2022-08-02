@@ -1,3 +1,4 @@
+function check_strain_rate(myFolder)
 %% check_strain_rate
 % Plots strain rates between two bursts
 % Short term - check consecutive bursts, see that the vertical velocities
@@ -8,10 +9,37 @@
 
 global cfg
 
-% Input first and last file
-filename1 = '/Users/georgelu/Downloads/S30_201808/DIR/DATA2018-08-21-0751.DAT';%/Users/georgelu/Documents/ApRES burn-in tests/DIR2022-02-16-1729/DATA2022-02-16-1729.DAT
-filename2 = '/Users/georgelu/Downloads/S30_201808/DIR/DATA2018-08-28-1808.DAT';
+% Detect first and last file
+% Main folder
+%myFolder = '/Users/georgelu/Downloads/S30_201808/';
 
+% Check if the folder exists
+if ~isfolder(myFolder)
+    errorMessage = sprintf('Error: The following folder does not exist:\n%s\nPlease specify a new folder.', myFolder);
+    uiwait(warndlg(errorMessage));
+    myFolder = uigetdir(); % Ask for a new one.
+    if myFolder == 0
+         % User clicked Cancel
+         return;
+    end
+end
+
+% Get list of subfolders with the automated tests
+subfolderID = fullfile(myFolder,'DIR*');
+subfolders = dir(subfolderID);
+% First file
+first_folder = subfolders(1).name;
+filePattern = fullfile(strcat(myFolder,first_folder),'*.DAT');
+fileList = dir(filePattern);
+first_file = fileList(1).name;
+filename1 = strcat(myFolder,first_folder,'/',first_file); % can also modify to specific file (include full path)
+
+% Last file
+last_folder = subfolders(end).name;
+filePattern = fullfile(strcat(myFolder,last_folder),'*.DAT');
+fileList = dir(filePattern);
+last_file = fileList(end).name;
+filename2 = strcat(myFolder,last_folder,'/',last_file); % can also modify to specific file (include full path)
 % First file - between first 2 bursts
 [range,dh,dhe,dt] = fmcw_melt(filename1,filename1,1,2,0);
 
@@ -19,7 +47,7 @@ filename2 = '/Users/georgelu/Downloads/S30_201808/DIR/DATA2018-08-28-1808.DAT';
 [range,dh,dhe,dt] = fmcw_melt(filename2,filename2,1,2,0);
 
 % Long comparison between first and last file
-[range,dh,dhe,dt] = fmcw_melt(filename1,filename2,1,1,1);
+[range,dh,dhe,dt] = fmcw_melt(filename1,filename2,1,1,0);
 %[range,dh,dhe,dt] = fmcw_melt(filename1,filename2,2,2,0);
 
 %% Functions
@@ -69,7 +97,6 @@ end
 
 % Load
 if avg == 0
-    Disp("Short Term")
     f = Field_load(filename1,b1); 
     g = Field_load(filename2,b2);
 elseif avg == 1
@@ -518,20 +545,20 @@ ylabel('vertical velocity (m day^{-1})')
 box on
 
 linkaxes(ax,'x')
-end
+
 
 function Disp(text) % Only diplay output if cfg.verbose on
 global cfg
 if cfg.verbose
     disp(text)
 end
-end
+
 
 function h = fillXRange(x,varargin)
 y = get(gca,'ylim');
 h = patch([x(1) x(2) x(2) x(1)],[y(1) y(1) y(2) y(2)],[0.6 0.6 0.6]);
 set(h,varargin{:})
-end
+
 
 function plotAmp(f,g,ii)
 if nargin<3
@@ -545,4 +572,4 @@ ylabel('Vrms (dB)')
 xlabel('range (m)')
 legend([fah(1) gah(1)],{datestr(f.TimeStamp),datestr(g.TimeStamp)},'Location','SouthWest')
 ylim([-140 -20])
-end
+
