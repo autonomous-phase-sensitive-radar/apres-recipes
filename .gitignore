@@ -2,3 +2,5 @@
 *.rtf
 *.asv
 *.asv
+field-processing-scripts/check_log_file.txt
+field-processing-scripts/.DS_Store

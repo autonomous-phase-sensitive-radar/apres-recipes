@@ -33,7 +33,7 @@ pct_attenuated = check_clipping_attenuation(myFolder,max_plots,file_spacing, bur
 disp(strcat('Percentage of checked bursts clipped:',int2str(pct_clipped),'%'));
 disp(strcat('Percentage of checked bursts with high attenuation:',int2str(pct_attenuated),'%'));
 
-%% Strain rate checker 
-check_strain_rate(myFolder);
+%% Vertical velocity checker 
+check_vertical_velocity(myFolder);
 diary off;
 

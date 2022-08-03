@@ -1,9 +1,6 @@
-function check_strain_rate(myFolder)
-%% check_strain_rate
-% Plots strain rates between two bursts
-% Short term - check consecutive bursts, see that the vertical velocities
-% are about zero.
-% Long term - check bursts x time apart, calculate strain rate
+function check_vertical_velocity(myFolder)
+%% check_vertical_velocity
+% Plots vertical velocities between two bursts
 %
 % George Lu, July 2022
 
