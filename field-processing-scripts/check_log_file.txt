@@ -346,3 +346,1162 @@ DATA2018-08-28-2211   28-Aug-2018 22:11:09
 Time interval: 7.7657 days
  
 Using user defined max fit depth 1300
+[Warning: Input should be a string, character array, or cell array of character arrays.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('strcat', 'C:\Program Files\MATLAB\R2022a\toolbox\matlab\strfun\strcat.m', 94)" style="font-weight:bold">strcat</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2022a\toolbox\matlab\strfun\strcat.m',94,0)">line 94</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_script', 'C:\Users\apres\Desktop\Greenland lakes\processing\field-processing-scripts\run_script.m', 5)" style="font-weight:bold">run_script</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\processing\field-processing-scripts\run_script.m',5,0)">line 5</a>)
+] 
+Elapsed time is 0.000159 seconds.
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Vectors must be the same length.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('check_dates_vs_time', 'C:\Users\apres\Desktop\Greenland lakes\processing\field-processing-scripts\check_dates_vs_time.m', 73)" style="font-weight:bold">check_dates_vs_time</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\processing\field-processing-scripts\check_dates_vs_time.m',73,0)">line 73</a>)
+    plot(dates,0,'o');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_script', 'C:\Users\apres\Desktop\Greenland lakes\processing\field-processing-scripts\run_script.m', 8)" style="font-weight:bold">run_script</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\processing\field-processing-scripts\run_script.m',8,0)">line 8</a>)
+check_dates_vs_time(myFolder, resolution);
+} 
+Elapsed time is 0.000161 seconds.
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Vectors must be the same length.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('check_dates_vs_time', 'C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_dates_vs_time.m', 73)" style="font-weight:bold">check_dates_vs_time</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_dates_vs_time.m',73,0)">line 73</a>)
+    plot(dates,0,'o');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_script', 'C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\run_script.m', 8)" style="font-weight:bold">run_script</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\run_script.m',8,0)">line 8</a>)
+check_dates_vs_time(myFolder, resolution);
+} 
+opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_dates_vs_time.m',73,0)
+run_script
+Elapsed time is 0.000048 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+check_dates_vs_time
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('check_dates_vs_time', 'C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_dates_vs_time.m', 19)" style="font-weight:bold">check_dates_vs_time</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_dates_vs_time.m',19,0)">line 19</a>)
+if ~isfolder(myFolder)
+} 
+check_dates_vs_time
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('check_dates_vs_time', 'C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_dates_vs_time.m', 19)" style="font-weight:bold">check_dates_vs_time</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_dates_vs_time.m',19,0)">line 19</a>)
+if ~isfolder(myFolder)
+} 
+run_script
+Elapsed time is 0.000190 seconds.
+if system_dependent('IsDebugMode')==1, dbquit; end
+run_script
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 0.452731 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0847.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+{'fmcw_phase2range' is not found in the current folder or on the MATLAB path, but exists in:
+    C:\Users\apres\Downloads\processing-main\processing-main\field-processing-scripts\nicholls_utils
+
+<a href = "matlab:matlab.internal.language.commandline.executeCode('cd ''C:\Users\apres\Downloads\processing-main\processing-main\field-processing-scripts\nicholls_utils''')">Change the MATLAB current folder</a> or <a href = "matlab:matlab.internal.language.commandline.executeCode('addpath ''C:\Users\apres\Downloads\processing-main\processing-main\field-processing-scripts\nicholls_utils''')">add its folder to the MATLAB path</a>.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fmcw_range', 'C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\fmcw_range.m', 92)" style="font-weight:bold">fmcw_range</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\fmcw_range.m',92,0)">line 92</a>)
+Rfine = fmcw_phase2range(angle(spec_cor),lambdac,repmat(Rcoarse,size(spec_cor,1),1),K,ci);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('check_clipping_attenuation', 'C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_clipping_attenuation.m', 210)" style="font-weight:bold">check_clipping_attenuation</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\check_clipping_attenuation.m',210,0)">line 210</a>)
+                        [rc,~,~,su] = fmcw_range(vdat,pad,depthset,win);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_script', 'C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\run_script.m', 27)" style="font-weight:bold">run_script</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\Greenland lakes\apres\processing\field-processing-scripts\run_script.m',27,0)">line 27</a>)
+pct_clipped = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude);
+} 
+addpath('nicholls_utils\')
+run_script
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 0.022384 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0847.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+Opening file:DATA2018-08-24-0847.DAT-Burst4
+Opening file:DATA2018-08-24-0847.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:11%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 0.013970 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0847.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+Opening file:DATA2018-08-24-0847.DAT-Burst4
+Opening file:DATA2018-08-24-0847.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:11%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 0.208092 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0847.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+Opening file:DATA2018-08-24-0847.DAT-Burst4
+Opening file:DATA2018-08-24-0847.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:11%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300
+{Output argument "pct_flagged" (and possibly others) not assigned a value in the execution with
+"check_clipping_attenuation" function.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_script', 'C:\Users\apres\Desktop\ApRES\scripts_august\processing\field-processing-scripts\run_script.m', 32)" style="font-weight:bold">run_script</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\ApRES\scripts_august\processing\field-processing-scripts\run_script.m',32,0)">line 32</a>)
+pct_clipped = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude);
+} 
+run_script
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 0.019533 seconds.
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('check_dates_vs_time')" style="font-weight:bold">check_dates_vs_time</a>
+Data inputs must match the axis configuration. A numeric axis must have numeric data inputs or data inputs which can be
+converted to double.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_script', 'C:\Users\apres\Desktop\ApRES\scripts_august\processing\field-processing-scripts\run_script.m', 13)" style="font-weight:bold">run_script</a> (<a href="matlab: opentoline('C:\Users\apres\Desktop\ApRES\scripts_august\processing\field-processing-scripts\run_script.m',13,0)">line 13</a>)
+check_dates_vs_time(myFolder, resolution);
+} 
+close all
+run_script
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 0.009398 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0847.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+Opening file:DATA2018-08-24-0847.DAT-Burst4
+Opening file:DATA2018-08-24-0847.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:11%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 0.015166 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0847.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+Opening file:DATA2018-08-24-0847.DAT-Burst4
+Opening file:DATA2018-08-24-0847.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:11%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 1.310337 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0847.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0810.DAT-Burst2
+Opening file:DATA2018-08-22-0810.DAT-Burst4
+Opening file:DATA2018-08-22-0810.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0847.DAT-Burst2
+Opening file:DATA2018-08-24-0847.DAT-Burst4
+Opening file:DATA2018-08-24-0847.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0924.DAT-Burst2
+Opening file:DATA2018-08-26-0924.DAT-Burst4
+Opening file:DATA2018-08-26-0924.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1002.DAT-Burst2
+Opening file:DATA2018-08-28-1002.DAT-Burst4
+Opening file:DATA2018-08-28-1002.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:11%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-21-1154.DAT
+Opening file:DATA2018-08-21-1557.DAT
+Opening file:DATA2018-08-21-2000.DAT
+Opening file:DATA2018-08-22-0003.DAT
+Opening file:DATA2018-08-22-0407.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-22-1213.DAT
+Opening file:DATA2018-08-22-1616.DAT
+Opening file:DATA2018-08-22-2019.DAT
+Opening file:DATA2018-08-23-0022.DAT
+Opening file:DATA2018-08-23-0426.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-23-1232.DAT
+Opening file:DATA2018-08-23-1635.DAT
+Opening file:DATA2018-08-23-2038.DAT
+Opening file:DATA2018-08-24-0041.DAT
+Opening file:DATA2018-08-24-0444.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-24-1250.DAT
+Opening file:DATA2018-08-24-1653.DAT
+Opening file:DATA2018-08-24-2056.DAT
+Opening file:DATA2018-08-25-0059.DAT
+Opening file:DATA2018-08-25-0502.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-25-1308.DAT
+Opening file:DATA2018-08-25-1711.DAT
+Opening file:DATA2018-08-25-2114.DAT
+Opening file:DATA2018-08-26-0118.DAT
+Opening file:DATA2018-08-26-0521.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-26-1327.DAT
+Opening file:DATA2018-08-26-1730.DAT
+Opening file:DATA2018-08-26-2133.DAT
+Opening file:DATA2018-08-27-0137.DAT
+Opening file:DATA2018-08-27-0540.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-27-1346.DAT
+Opening file:DATA2018-08-27-1749.DAT
+Opening file:DATA2018-08-27-2152.DAT
+Opening file:DATA2018-08-28-0156.DAT
+Opening file:DATA2018-08-28-0559.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-1405.DAT
+Opening file:DATA2018-08-28-1808.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 6.329730 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-1154.DAT-Burst2
+Opening file:DATA2018-08-21-1154.DAT-Burst4
+Opening file:DATA2018-08-21-1154.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-2000.DAT-Burst2
+Opening file:DATA2018-08-21-2000.DAT-Burst4
+Opening file:DATA2018-08-21-2000.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0407.DAT-Burst2
+Opening file:DATA2018-08-22-0407.DAT-Burst4
+Opening file:DATA2018-08-22-0407.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-1213.DAT-Burst2
+Opening file:DATA2018-08-22-1213.DAT-Burst4
+Opening file:DATA2018-08-22-1213.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-2019.DAT-Burst2
+Opening file:DATA2018-08-22-2019.DAT-Burst4
+Opening file:DATA2018-08-22-2019.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-0426.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-23-0426.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-23-1232.DAT-Burst2
+Opening file:DATA2018-08-23-1232.DAT-Burst4
+!!!!!!! The signal might be clipped in DATA2018-08-23-1232.DAT b:4 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-23-2038.DAT-Burst2
+Opening file:DATA2018-08-23-2038.DAT-Burst4
+Opening file:DATA2018-08-23-2038.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0444.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0444.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-24-1250.DAT-Burst2
+Opening file:DATA2018-08-24-1250.DAT-Burst4
+!!!!!!! The signal might be clipped in DATA2018-08-24-1250.DAT b:4 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-24-2056.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-2056.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-25-0502.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-25-0502.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-25-1308.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-25-1308.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-25-2114.DAT-Burst2
+Opening file:DATA2018-08-25-2114.DAT-Burst4
+Opening file:DATA2018-08-25-2114.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0521.DAT-Burst2
+Opening file:DATA2018-08-26-0521.DAT-Burst4
+Opening file:DATA2018-08-26-0521.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-1327.DAT-Burst2
+Opening file:DATA2018-08-26-1327.DAT-Burst4
+Opening file:DATA2018-08-26-1327.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-2133.DAT-Burst2
+Opening file:DATA2018-08-26-2133.DAT-Burst4
+Opening file:DATA2018-08-26-2133.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-0540.DAT-Burst2
+Opening file:DATA2018-08-27-0540.DAT-Burst4
+Opening file:DATA2018-08-27-0540.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-1346.DAT-Burst2
+Opening file:DATA2018-08-27-1346.DAT-Burst4
+Opening file:DATA2018-08-27-1346.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-2152.DAT-Burst2
+Opening file:DATA2018-08-27-2152.DAT-Burst4
+Opening file:DATA2018-08-27-2152.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-0559.DAT-Burst2
+Opening file:DATA2018-08-28-0559.DAT-Burst4
+Opening file:DATA2018-08-28-0559.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1405.DAT-Burst2
+Opening file:DATA2018-08-28-1405.DAT-Burst4
+Opening file:DATA2018-08-28-1405.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-2211.DAT-Burst2
+Opening file:DATA2018-08-28-2211.DAT-Burst4
+Opening file:DATA2018-08-28-2211.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-1154.DAT-Burst2
+Opening file:DATA2018-08-21-1154.DAT-Burst4
+Opening file:DATA2018-08-21-1154.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-2000.DAT-Burst2
+Opening file:DATA2018-08-21-2000.DAT-Burst4
+Opening file:DATA2018-08-21-2000.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0407.DAT-Burst2
+Opening file:DATA2018-08-22-0407.DAT-Burst4
+Opening file:DATA2018-08-22-0407.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-1213.DAT-Burst2
+Opening file:DATA2018-08-22-1213.DAT-Burst4
+Opening file:DATA2018-08-22-1213.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-2019.DAT-Burst2
+Opening file:DATA2018-08-22-2019.DAT-Burst4
+Opening file:DATA2018-08-22-2019.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-0426.DAT-Burst2
+Opening file:DATA2018-08-23-0426.DAT-Burst4
+Opening file:DATA2018-08-23-0426.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-1232.DAT-Burst2
+Opening file:DATA2018-08-23-1232.DAT-Burst4
+Opening file:DATA2018-08-23-1232.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-2038.DAT-Burst2
+Opening file:DATA2018-08-23-2038.DAT-Burst4
+Opening file:DATA2018-08-23-2038.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0444.DAT-Burst2
+Opening file:DATA2018-08-24-0444.DAT-Burst4
+Opening file:DATA2018-08-24-0444.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-1250.DAT-Burst2
+Opening file:DATA2018-08-24-1250.DAT-Burst4
+Opening file:DATA2018-08-24-1250.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-2056.DAT-Burst2
+Opening file:DATA2018-08-24-2056.DAT-Burst4
+Opening file:DATA2018-08-24-2056.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-25-0502.DAT-Burst2
+Opening file:DATA2018-08-25-0502.DAT-Burst4
+Opening file:DATA2018-08-25-0502.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-25-1308.DAT-Burst2
+Opening file:DATA2018-08-25-1308.DAT-Burst4
+Opening file:DATA2018-08-25-1308.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-25-2114.DAT-Burst2
+Opening file:DATA2018-08-25-2114.DAT-Burst4
+Opening file:DATA2018-08-25-2114.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0521.DAT-Burst2
+Opening file:DATA2018-08-26-0521.DAT-Burst4
+Opening file:DATA2018-08-26-0521.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-1327.DAT-Burst2
+Opening file:DATA2018-08-26-1327.DAT-Burst4
+Opening file:DATA2018-08-26-1327.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-2133.DAT-Burst2
+Opening file:DATA2018-08-26-2133.DAT-Burst4
+Opening file:DATA2018-08-26-2133.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-0540.DAT-Burst2
+Opening file:DATA2018-08-27-0540.DAT-Burst4
+Opening file:DATA2018-08-27-0540.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-1346.DAT-Burst2
+Opening file:DATA2018-08-27-1346.DAT-Burst4
+Opening file:DATA2018-08-27-1346.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-2152.DAT-Burst2
+Opening file:DATA2018-08-27-2152.DAT-Burst4
+Opening file:DATA2018-08-27-2152.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-0559.DAT-Burst2
+Opening file:DATA2018-08-28-0559.DAT-Burst4
+Opening file:DATA2018-08-28-0559.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1405.DAT-Burst2
+Opening file:DATA2018-08-28-1405.DAT-Burst4
+Opening file:DATA2018-08-28-1405.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-2211.DAT-Burst2
+Opening file:DATA2018-08-28-2211.DAT-Burst4
+Opening file:DATA2018-08-28-2211.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:16%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300
+Opening file:DATA2018-08-21-0348.DAT
+Opening file:DATA2018-08-21-0751.DAT
+Opening file:DATA2018-08-21-1154.DAT
+Opening file:DATA2018-08-21-1557.DAT
+Opening file:DATA2018-08-21-2000.DAT
+Opening file:DATA2018-08-22-0003.DAT
+Opening file:DATA2018-08-22-0407.DAT
+Opening file:DATA2018-08-22-0810.DAT
+Opening file:DATA2018-08-22-1213.DAT
+Opening file:DATA2018-08-22-1616.DAT
+Opening file:DATA2018-08-22-2019.DAT
+Opening file:DATA2018-08-23-0022.DAT
+Opening file:DATA2018-08-23-0426.DAT
+Opening file:DATA2018-08-23-0829.DAT
+Opening file:DATA2018-08-23-1232.DAT
+Opening file:DATA2018-08-23-1635.DAT
+Opening file:DATA2018-08-23-2038.DAT
+Opening file:DATA2018-08-24-0041.DAT
+Opening file:DATA2018-08-24-0444.DAT
+Opening file:DATA2018-08-24-0847.DAT
+Opening file:DATA2018-08-24-1250.DAT
+Opening file:DATA2018-08-24-1653.DAT
+Opening file:DATA2018-08-24-2056.DAT
+Opening file:DATA2018-08-25-0059.DAT
+Opening file:DATA2018-08-25-0502.DAT
+Opening file:DATA2018-08-25-0905.DAT
+Opening file:DATA2018-08-25-1308.DAT
+Opening file:DATA2018-08-25-1711.DAT
+Opening file:DATA2018-08-25-2114.DAT
+Opening file:DATA2018-08-26-0118.DAT
+Opening file:DATA2018-08-26-0521.DAT
+Opening file:DATA2018-08-26-0924.DAT
+Opening file:DATA2018-08-26-1327.DAT
+Opening file:DATA2018-08-26-1730.DAT
+Opening file:DATA2018-08-26-2133.DAT
+Opening file:DATA2018-08-27-0137.DAT
+Opening file:DATA2018-08-27-0540.DAT
+Opening file:DATA2018-08-27-0943.DAT
+Opening file:DATA2018-08-27-1346.DAT
+Opening file:DATA2018-08-27-1749.DAT
+Opening file:DATA2018-08-27-2152.DAT
+Opening file:DATA2018-08-28-0156.DAT
+Opening file:DATA2018-08-28-0559.DAT
+Opening file:DATA2018-08-28-1002.DAT
+Opening file:DATA2018-08-28-1405.DAT
+Opening file:DATA2018-08-28-1808.DAT
+Opening file:DATA2018-08-28-2211.DAT
+Elapsed time is 6.041784 seconds.
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-1154.DAT-Burst2
+Opening file:DATA2018-08-21-1154.DAT-Burst4
+Opening file:DATA2018-08-21-1154.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-2000.DAT-Burst2
+Opening file:DATA2018-08-21-2000.DAT-Burst4
+Opening file:DATA2018-08-21-2000.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0407.DAT-Burst2
+Opening file:DATA2018-08-22-0407.DAT-Burst4
+Opening file:DATA2018-08-22-0407.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-1213.DAT-Burst2
+Opening file:DATA2018-08-22-1213.DAT-Burst4
+Opening file:DATA2018-08-22-1213.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-2019.DAT-Burst2
+Opening file:DATA2018-08-22-2019.DAT-Burst4
+Opening file:DATA2018-08-22-2019.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-0426.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-23-0426.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-23-1232.DAT-Burst2
+Opening file:DATA2018-08-23-1232.DAT-Burst4
+!!!!!!! The signal might be clipped in DATA2018-08-23-1232.DAT b:4 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-23-2038.DAT-Burst2
+Opening file:DATA2018-08-23-2038.DAT-Burst4
+Opening file:DATA2018-08-23-2038.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0444.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-0444.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-24-1250.DAT-Burst2
+Opening file:DATA2018-08-24-1250.DAT-Burst4
+!!!!!!! The signal might be clipped in DATA2018-08-24-1250.DAT b:4 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-24-2056.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-24-2056.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-25-0502.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-25-0502.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-25-1308.DAT-Burst2
+!!!!!!! The signal might be clipped in DATA2018-08-25-1308.DAT b:2 c: avg21+6dB !!!!!!!!
+Moving to look at next file
+Opening file:DATA2018-08-25-2114.DAT-Burst2
+Opening file:DATA2018-08-25-2114.DAT-Burst4
+Opening file:DATA2018-08-25-2114.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0521.DAT-Burst2
+Opening file:DATA2018-08-26-0521.DAT-Burst4
+Opening file:DATA2018-08-26-0521.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-1327.DAT-Burst2
+Opening file:DATA2018-08-26-1327.DAT-Burst4
+Opening file:DATA2018-08-26-1327.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-2133.DAT-Burst2
+Opening file:DATA2018-08-26-2133.DAT-Burst4
+Opening file:DATA2018-08-26-2133.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-0540.DAT-Burst2
+Opening file:DATA2018-08-27-0540.DAT-Burst4
+Opening file:DATA2018-08-27-0540.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-1346.DAT-Burst2
+Opening file:DATA2018-08-27-1346.DAT-Burst4
+Opening file:DATA2018-08-27-1346.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-2152.DAT-Burst2
+Opening file:DATA2018-08-27-2152.DAT-Burst4
+Opening file:DATA2018-08-27-2152.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-0559.DAT-Burst2
+Opening file:DATA2018-08-28-0559.DAT-Burst4
+Opening file:DATA2018-08-28-0559.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1405.DAT-Burst2
+Opening file:DATA2018-08-28-1405.DAT-Burst4
+Opening file:DATA2018-08-28-1405.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-2211.DAT-Burst2
+Opening file:DATA2018-08-28-2211.DAT-Burst4
+Opening file:DATA2018-08-28-2211.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-0348.DAT-Burst2
+Opening file:DATA2018-08-21-0348.DAT-Burst4
+Opening file:DATA2018-08-21-0348.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-1154.DAT-Burst2
+Opening file:DATA2018-08-21-1154.DAT-Burst4
+Opening file:DATA2018-08-21-1154.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-21-2000.DAT-Burst2
+Opening file:DATA2018-08-21-2000.DAT-Burst4
+Opening file:DATA2018-08-21-2000.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-0407.DAT-Burst2
+Opening file:DATA2018-08-22-0407.DAT-Burst4
+Opening file:DATA2018-08-22-0407.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-1213.DAT-Burst2
+Opening file:DATA2018-08-22-1213.DAT-Burst4
+Opening file:DATA2018-08-22-1213.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-22-2019.DAT-Burst2
+Opening file:DATA2018-08-22-2019.DAT-Burst4
+Opening file:DATA2018-08-22-2019.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-0426.DAT-Burst2
+Opening file:DATA2018-08-23-0426.DAT-Burst4
+Opening file:DATA2018-08-23-0426.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-1232.DAT-Burst2
+Opening file:DATA2018-08-23-1232.DAT-Burst4
+Opening file:DATA2018-08-23-1232.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-23-2038.DAT-Burst2
+Opening file:DATA2018-08-23-2038.DAT-Burst4
+Opening file:DATA2018-08-23-2038.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-0444.DAT-Burst2
+Opening file:DATA2018-08-24-0444.DAT-Burst4
+Opening file:DATA2018-08-24-0444.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-1250.DAT-Burst2
+Opening file:DATA2018-08-24-1250.DAT-Burst4
+Opening file:DATA2018-08-24-1250.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-24-2056.DAT-Burst2
+Opening file:DATA2018-08-24-2056.DAT-Burst4
+Opening file:DATA2018-08-24-2056.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-25-0502.DAT-Burst2
+Opening file:DATA2018-08-25-0502.DAT-Burst4
+Opening file:DATA2018-08-25-0502.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-25-1308.DAT-Burst2
+Opening file:DATA2018-08-25-1308.DAT-Burst4
+Opening file:DATA2018-08-25-1308.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-25-2114.DAT-Burst2
+Opening file:DATA2018-08-25-2114.DAT-Burst4
+Opening file:DATA2018-08-25-2114.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-0521.DAT-Burst2
+Opening file:DATA2018-08-26-0521.DAT-Burst4
+Opening file:DATA2018-08-26-0521.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-1327.DAT-Burst2
+Opening file:DATA2018-08-26-1327.DAT-Burst4
+Opening file:DATA2018-08-26-1327.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-26-2133.DAT-Burst2
+Opening file:DATA2018-08-26-2133.DAT-Burst4
+Opening file:DATA2018-08-26-2133.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-0540.DAT-Burst2
+Opening file:DATA2018-08-27-0540.DAT-Burst4
+Opening file:DATA2018-08-27-0540.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-1346.DAT-Burst2
+Opening file:DATA2018-08-27-1346.DAT-Burst4
+Opening file:DATA2018-08-27-1346.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-27-2152.DAT-Burst2
+Opening file:DATA2018-08-27-2152.DAT-Burst4
+Opening file:DATA2018-08-27-2152.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-0559.DAT-Burst2
+Opening file:DATA2018-08-28-0559.DAT-Burst4
+Opening file:DATA2018-08-28-0559.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-1405.DAT-Burst2
+Opening file:DATA2018-08-28-1405.DAT-Burst4
+Opening file:DATA2018-08-28-1405.DAT-Burst6
+4 burst(s) opened in file
+Opening file:DATA2018-08-28-2211.DAT-Burst2
+Opening file:DATA2018-08-28-2211.DAT-Burst4
+Opening file:DATA2018-08-28-2211.DAT-Burst6
+4 burst(s) opened in file
+Percentage of checked bursts clipped:16%
+Percentage of checked bursts with high attenuation:0%
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-21-0348   21-Aug-2018 04:49:19
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+DATA2018-08-28-2211   28-Aug-2018 23:11:54
+Time interval: 0.042188 days
+ 
+Using user defined max fit depth 1300
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Radar processor check_vertical_velocity
+ 
+Using files:
+Filename                                  Date/Time
+DATA2018-08-21-0348   21-Aug-2018 03:48:34
+DATA2018-08-28-2211   28-Aug-2018 22:11:09
+Time interval: 7.7657 days
+ 
+Using user defined max fit depth 1300

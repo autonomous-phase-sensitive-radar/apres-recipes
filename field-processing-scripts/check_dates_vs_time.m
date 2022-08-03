@@ -70,9 +70,9 @@ toc
 
 %% Plotting
 if resolution == 1
-    plot(dates,0,'o');
+    plot(dates,0,'.k');
     xlabel("Date");title("Date of each .DAT file created");set(gca,'YTick',[]);
 elseif resolution == 0
-    plot(dates,times,'o');
+    plot(dates,times,'.k');
     xlabel("Date");ylabel("Time of Day");title("Time and date of each burst");
 end

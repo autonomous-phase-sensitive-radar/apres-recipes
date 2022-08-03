@@ -1,10 +1,18 @@
 %% Main script to run all the checkscripts
 diary check_log_file.txt
+
+%% close figurs
+close all
+
+% add scripts to the path
+addpath('nicholls_utils\')
+
 % Select SD card path
 SD_card_directory = uigetdir(); % Can manually type the path as well
+%SD_card_directory = 'D:\';      % this is the path to the SD card, assuming no other hard drive has been plugged in previously.
 myFolder = strcat(SD_card_directory,'/');
 %% Data gap check
-resolution = 1; % Default 1 - coarse resolution. 0 is for fine resolution
+resolution = 0; % Default 1 - coarse resolution. 0 is for fine resolution
 check_dates_vs_time(myFolder, resolution);
 
 %% Clipping and attenuation check

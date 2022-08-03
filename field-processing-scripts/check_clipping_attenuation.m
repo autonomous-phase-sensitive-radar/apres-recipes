@@ -234,7 +234,7 @@ end
 
 %% 
 function [tax,hax,aax,pax] = open_plot(vdat)
-    figure('Position',[680,181,1010,797]);
+    figure('Position',[0.1557    0.0903    1.0413    0.5313]*1e3);
     t=tiledlayout(4,4);
 
     tax = nexttile(1,[2,2]);
