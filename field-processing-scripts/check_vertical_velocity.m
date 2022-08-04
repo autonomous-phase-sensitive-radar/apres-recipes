@@ -1,4 +1,4 @@
-function check_vertical_velocity(myFolder)
+function [c1,c2] = check_vertical_velocity(myFolder,folder)
 %% check_vertical_velocity
 % Plots vertical velocities between two bursts
 %
@@ -22,7 +22,13 @@ if ~isfolder(myFolder)
 end
 
 % Get list of subfolders with the automated tests
-subfolderID = fullfile(myFolder,'DIR*');
+if ~exist('folder','var')
+    % parameter does not exist, so default it to something
+    subfolderID = fullfile(myFolder,'DIR*');
+else
+    % Get list of subfolders with the automated tests
+    subfolderID = fullfile(myFolder,folder);
+end
 subfolders = dir(subfolderID);
 % First file
 first_folder = subfolders(1).name;
@@ -38,17 +44,17 @@ fileList = dir(filePattern);
 last_file = fileList(end).name;
 filename2 = strcat(myFolder,last_folder,'/',last_file); % can also modify to specific file (include full path)
 % First file - between first 2 bursts
-[range,dh,dhe,dt] = fmcw_melt(filename1,filename1,1,2,0);
+[range,dh,dhe,dt,c1] = fmcw_melt(filename1,filename1,1,2,0);
 
 % Last file - 2 consecutive bursts
-[range,dh,dhe,dt] = fmcw_melt(filename2,filename2,1,2,0);
+[range,dh,dhe,dt,c2] = fmcw_melt(filename2,filename2,1,2,0);
 
 % Long comparison between first and last file
-[range,dh,dhe,dt] = fmcw_melt(filename1,filename2,1,1,0);
+%[range,dh,dhe,dt] = fmcw_melt(filename1,filename2,1,1,0);
 %[range,dh,dhe,dt] = fmcw_melt(filename1,filename2,2,2,0);
 
 %% Functions
-function [range,dh,dhe,dt] = fmcw_melt(filename1,filename2,b1,b2,avg)
+function [range,dh,dhe,dt,c] = fmcw_melt(filename1,filename2,b1,b2,avg)
 %% Load processing settings
 global cfg
 cfg = fmcw_process_config_vsr; % Load default configuration
@@ -540,8 +546,14 @@ ax(2) = subplot(2,1,2);
 erbar(range,dh./dt,dhe./dt,-dhe./dt,'k','k'); % errors
 ylabel('vertical velocity (m day^{-1})')
 box on
-
+% Try rudimentary fit 
+c = polyfit(range, dh./dt, 1);
+hold on;
+v_est = polyval(c,range);
+plot(ax(2),range,v_est,'r-');
+hold off;
 linkaxes(ax,'x')
+
 
 
 function Disp(text) % Only diplay output if cfg.verbose on

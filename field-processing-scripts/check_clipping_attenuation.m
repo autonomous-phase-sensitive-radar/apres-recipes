@@ -1,4 +1,4 @@
-function pct_flagged = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude)
+function [pct_flagged, flagged_files] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude,folder)
 %% Check clipping/attenuation
 % This script, which adapts Elizabeth Case's field processing scripts,
 % flags data that potentially contains clipping. If one burst within a data
@@ -48,13 +48,18 @@ if ~isfolder(myFolder)
 end
 
 % Get list of subfolders with the automated tests
-subfolderID = fullfile(myFolder,'DIR*');
+if ~exist('folder','var')
+    % parameter does not exist, so default it to something
+    subfolderID = fullfile(myFolder,'DIR*');
+else
+    % Get list of subfolders with the automated tests
+    subfolderID = fullfile(myFolder,folder);
+end
 subfolders = dir(subfolderID);
 num_plots = 0;
-total_bursts_checked = 0;
-total_flagged_bursts = 0;
 total_flagged_files = 0;
 total_files_checked = 0; 
+flagged_files = [];
 for i=1:length(subfolders)
     subfolder = subfolders(i).name;
     filePattern = fullfile(strcat(myFolder,subfolder),'*.DAT');
@@ -167,7 +172,6 @@ for i=1:length(subfolders)
                     
                     %average chirps from burst
                     vdat = Field_burst_mean(vdats(AttSetNum));
-                    total_bursts_checked = total_bursts_checked + 1;
                     drawPlot = 0; % Default dont draw plot
                     if any(round(vdat.vif,2)==0) || any(round(vdat.vif,2)==2.5) && clipping ==1
                         vdat.chirpname = [shotNamePrefix ' avg' int2str(real(vdat.chirpAtt)) '+' int2str(imag(vdat.chirpAtt)) 'dB '];
@@ -185,15 +189,16 @@ for i=1:length(subfolders)
                         
                     end
                     if drawPlot==1
-                        total_flagged_bursts = total_flagged_bursts + 1;
+                        total_flagged_files = total_flagged_files + 1;
                         num_plots = num_plots + 1;
+                        flagged_files = vertcat(flagged_files,vdat.chirpname);
                         if num_plots == max_plots
                             disp("Max number of plots reached. Stopping...")
                         end
                         % Figure 1a & b: % plot voltage vs. time series, histogram of the avg. chirp,
                         % and note if there is any cutoff
                         
-                        [tax,hax,aax,pax] = open_plot(vdat);
+                        [tax,hax,aax] = open_plot(vdat);
                         
                         axes(tax), hold on
                         ht = plot(vdat.t,vdat.vif); % signal
@@ -208,11 +213,7 @@ for i=1:length(subfolders)
                     
                         % phase process data
                         [rc,~,~,su] = fmcw_range(vdat,pad,depthset,win);
-        
-                        axes(pax), hold on
-                        plot(rc,angle(su));
-                        xlim([0 depthset])
-        
+
                         axes(aax), hold on
                         plot(rc,20*log10(abs(su)));
                         xlim([0 depthset])        
@@ -226,16 +227,13 @@ for i=1:length(subfolders)
     end
 end
 
-if resolution == 0
-    pct_flagged = 100*total_flagged_bursts/total_bursts_checked; 
-elseif resolution == 1
-    pct_flagged = 100*total_flagged_files/total_files_checked; 
-end
+pct_flagged = 100*total_flagged_files/total_files_checked; 
+
 
 %% 
-function [tax,hax,aax,pax] = open_plot(vdat)
+function [tax,hax,aax] = open_plot(vdat)
     figure('Position',[0.1557    0.0903    1.0413    0.5313]*1e3);
-    t=tiledlayout(4,4);
+    t=tiledlayout(3,4);
 
     tax = nexttile(1,[2,2]);
     set(tax,'tag','tax');
@@ -265,18 +263,6 @@ function [tax,hax,aax,pax] = open_plot(vdat)
     box on
     xlabel('Range (m)');
     ylabel('amplitude (dB Vrms)')
-    
-    % Phase subplot
-    pax = nexttile(13,[1,4]);
-    set(pax,'tag','pax');
-    box on
-    xlabel('Range (m)');
-    ylim([-3.5 3.5])
-    set(pax,'YLimMode','auto') % to allow rescale
-    ylabel('Phase (rad)')
-    title('Phase')
-
-    linkaxes([aax,pax],'x');
 
     title(t,vdat.chirpname);
 

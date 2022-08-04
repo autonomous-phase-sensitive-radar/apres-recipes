@@ -1,4 +1,4 @@
-function check_dates_vs_time(myFolder,resolution)
+function [gap_starts,gap_durations] = check_dates_vs_time(myFolder,resolution,expected_gap_hours, percent_error,folder)
 %% Check dates and/or times of measurements
 %
 % Run this script on the SD card folder to identify potential data gaps
@@ -26,8 +26,13 @@ if ~isfolder(myFolder)
     end
 end
 
-% Get list of subfolders with the automated tests
-subfolderID = fullfile(myFolder,'DIR*');
+if ~exist('folder','var')
+    % parameter does not exist, so default it to something
+    subfolderID = fullfile(myFolder,'DIR*');
+else
+    % Get list of subfolders with the automated tests
+    subfolderID = fullfile(myFolder,folder);
+end
 subfolders = dir(subfolderID);
 
 % Initialize array of dates and times
@@ -76,3 +81,19 @@ elseif resolution == 0
     plot(dates,times,'.k');
     xlabel("Date");ylabel("Time of Day");title("Time and date of each burst");
 end
+
+[gap_starts,gap_durations] = highlight_gaps(expected_gap_hours, percent_error, dates);
+
+function [gap_starts,gap_durations] = highlight_gaps(expected_gap_hours, percent_error, dates)
+    spacing = diff(dates);
+    [spacing_h, spacing_m, spacing_s] = hms(spacing);
+    spacing_hours = spacing_h + spacing_m./60 + spacing_s./3600;
+    gap_starts = [];
+    gap_durations = []; 
+    for i=1:length(spacing_hours)
+        if abs(spacing_hours(i)- expected_gap_hours) > expected_gap_hours*percent_error
+            gap_starts = vertcat(gap_starts,dates(i)); 
+            gap_durations = vertcat(gap_durations,spacing_hours(i)); 
+            disp(['An abnormal ', num2str(spacing_hours(i)), ' hour gap in data started at ', datestr(dates(i))])
+        end
+    end
