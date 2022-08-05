@@ -232,7 +232,7 @@ pct_flagged = 100*total_flagged_files/total_files_checked;
 
 %% 
 function [tax,hax,aax] = open_plot(vdat)
-    figure('Position',[0.1557    0.0903    1.0413    0.5313]*1e3);
+    figure('Position',[0.1557    0.1530    1.0413    0.4686]*1e3);
     t=tiledlayout(3,4);
 
     tax = nexttile(1,[2,2]);
@@ -265,4 +265,4 @@ function [tax,hax,aax] = open_plot(vdat)
     ylabel('amplitude (dB Vrms)')
 
     title(t,vdat.chirpname);
-
+    drawnow

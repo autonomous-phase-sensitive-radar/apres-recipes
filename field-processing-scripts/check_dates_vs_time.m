@@ -1,4 +1,4 @@
-function [gap_starts,gap_durations] = check_dates_vs_time(myFolder,resolution,expected_gap_hours, percent_error,folder)
+function [gap_starts,gap_durations] = check_dates_vs_time(myFolder,resolution,expected_gap_hours, percent_error, folder)
 %% Check dates and/or times of measurements
 %
 % Run this script on the SD card folder to identify potential data gaps
@@ -52,8 +52,13 @@ for i=1:length(subfolders)
         if resolution==1 % coarse resolution - only plot dates
             % Clean up names so we get datetimes
             date_string = erase(filename,'DATA');
-            date_string = erase(date_string,'.DAT');
-            datetime_val = datetime(date_string,'InputFormat','yyyy-MM-dd-HHmm');
+%             if mode == 0
+                 date_string = erase(date_string,'.DAT');
+                 datetime_val = datetime(date_string,'InputFormat','yyyy-MM-dd-HHmm');
+%             else
+%                  date_string = erase(date_string,'.dat');
+%                  datetime_val = datetime(date_string,'InputFormat','yyyy-MM-dd_HHmmss');
+%             end
             dates = vertcat(dates,datetime_val);
         elseif resolution == 0 % fine resolution - plot dates vs time
             filecontents = fileread(strcat(myFolder,subfolder,'/',filename));
