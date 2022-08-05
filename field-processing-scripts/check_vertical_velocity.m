@@ -35,6 +35,11 @@ filePattern = fullfile(strcat(myFolder,first_folder),'*.DAT');
 fileList = dir(filePattern);
 first_file = fileList(1).name;
 filename1 = strcat(myFolder,first_folder,'/',first_file); % can also modify to specific file (include full path)
+% Case in attended mode and you are comparing between files and not bursts
+filePattern = fullfile(strcat(myFolder,first_folder),'*.dat');
+fileList = dir(filePattern);
+second_file = fileList(2).name;
+filename1_a = strcat(myFolder,first_folder,'/',second_file); 
 
 % Last file
 last_folder = subfolders(end).name;
@@ -42,14 +47,29 @@ filePattern = fullfile(strcat(myFolder,last_folder),'*.DAT');
 fileList = dir(filePattern);
 last_file = fileList(end).name;
 filename2 = strcat(myFolder,last_folder,'/',last_file); % can also modify to specific file (include full path)
+% Case in attended mode and you are comparing between files and not bursts
+filePattern = fullfile(strcat(myFolder,last_folder),'*.dat');
+fileList = dir(filePattern);
+second_last_file = fileList(end-1).name;
+filename2_a = strcat(myFolder,last_folder,'/',second_last_file);
+
 
 % The commands below do the actual calculation of vertical velocity. 
 % You can mimic this format to do custom calculations
-% First file - between first 2 bursts
-[range,dh,dhe,dt,c1] = fmcw_melt(filename1,filename1,1,2,0);
+if ~exist('folder','var')
 
-% Last file - 2 consecutive bursts
-[range,dh,dhe,dt,c2] = fmcw_melt(filename2,filename2,1,2,0);
+    % First file - between first 2 bursts
+    [range,dh,dhe,dt,c1] = fmcw_melt(filename1,filename1,1,2,0);
+    
+    % Last file - 2 consecutive bursts
+    [range,dh,dhe,dt,c2] = fmcw_melt(filename2,filename2,1,2,0);
+else % attended mode data
+    % First 2 files 
+    [range,dh,dhe,dt,c1] = fmcw_melt(filename1,filename1_a,1,1,0);
+    
+    % Last file - 2 consecutive bursts
+    [range,dh,dhe,dt,c2] = fmcw_melt(filename2_a,filename2,1,1,0);
+end
 
 % Long comparison between first and last file
 %[range,dh,dhe,dt] = fmcw_melt(filename1,filename2,1,1,0);

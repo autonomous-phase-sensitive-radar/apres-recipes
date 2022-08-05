@@ -75,6 +75,8 @@ disp(strcat('Percentage of checked files flagged for overattenuation: ',int2str(
 %% Vertical velocity checker 
 if mode == 0
     [c1,c2] = check_vertical_velocity(myFolder);
+else
+    [c1,c2] = check_vertical_velocity(myFolder,subfolder);
 end
 
 %% Generate summary report
@@ -117,16 +119,12 @@ disp(newline)
 disp(strcat('Percentage of checked files flagged for clipping: ',int2str(pct_clipped),'%'));
 disp(strcat('Percentage of checked files flagged for overattenuation: ',int2str(pct_attenuated),'%'));
 
-if mode == 0
-    disp([newline,'Strain rates:'])
-    vv_msg_1 = 'Estimated strain rates from the first and last files are:';
-    disp(vv_msg_1);
-    vv_msg_2 = [num2str(c1(1),'%.3f'),' /day and ',num2str(c2(1),'%.3f'), ' /day, respectively'];
-    disp(vv_msg_2)
-else
-    vv_msg_1 = '';
-    vv_msg_2 = '';
-end
+disp([newline,'Strain rates:'])
+vv_msg_1 = 'Estimated strain rates from the first and last files are:';
+disp(vv_msg_1);
+vv_msg_2 = [num2str(c1(1),'%.3f'),' /day and ',num2str(c2(1),'%.3f'), ' /day, respectively'];
+disp(vv_msg_2)
+
 diary off;
 
 %% Display final message
