@@ -29,9 +29,11 @@ end
 if ~exist('folder','var')
     % parameter does not exist, so default it to something
     subfolderID = fullfile(myFolder,'DIR*');
+    extension = '*.DAT';
 else
     % Get list of subfolders with the automated tests
     subfolderID = fullfile(myFolder,folder);
+    extension = '*.dat';
 end
 subfolders = dir(subfolderID);
 
@@ -42,7 +44,7 @@ tic
 % Iterate through each subfolder
 for i=1:length(subfolders)
     subfolder = subfolders(i).name;
-    filePattern = fullfile(strcat(myFolder,subfolder),'*.DAT');
+    filePattern = fullfile(strcat(myFolder,subfolder),extension);
     % Get .DAT files in each folder
     fileList = dir(filePattern);
     % Iterate through all the files in each subfolder
@@ -52,13 +54,13 @@ for i=1:length(subfolders)
         if resolution==1 % coarse resolution - only plot dates
             % Clean up names so we get datetimes
             date_string = erase(filename,'DATA');
-%             if mode == 0
+            if ~exist('folder','var')
                  date_string = erase(date_string,'.DAT');
                  datetime_val = datetime(date_string,'InputFormat','yyyy-MM-dd-HHmm');
-%             else
-%                  date_string = erase(date_string,'.dat');
-%                  datetime_val = datetime(date_string,'InputFormat','yyyy-MM-dd_HHmmss');
-%             end
+            else
+                 date_string = erase(date_string,'.dat');
+                 datetime_val = datetime(date_string,'InputFormat','yyyy-MM-dd_HHmmss');
+            end
             dates = vertcat(dates,datetime_val);
         elseif resolution == 0 % fine resolution - plot dates vs time
             filecontents = fileread(strcat(myFolder,subfolder,'/',filename));

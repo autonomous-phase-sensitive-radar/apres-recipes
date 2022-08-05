@@ -21,12 +21,11 @@ if ~isfolder(myFolder)
     end
 end
 
-% Get list of subfolders with the automated tests
+% Get list of subfolders with the unattended tests
 if ~exist('folder','var')
     % parameter does not exist, so default it to something
     subfolderID = fullfile(myFolder,'DIR*');
 else
-    % Get list of subfolders with the automated tests
     subfolderID = fullfile(myFolder,folder);
 end
 subfolders = dir(subfolderID);
@@ -43,6 +42,9 @@ filePattern = fullfile(strcat(myFolder,last_folder),'*.DAT');
 fileList = dir(filePattern);
 last_file = fileList(end).name;
 filename2 = strcat(myFolder,last_folder,'/',last_file); % can also modify to specific file (include full path)
+
+% The commands below do the actual calculation of vertical velocity. 
+% You can mimic this format to do custom calculations
 % First file - between first 2 bursts
 [range,dh,dhe,dt,c1] = fmcw_melt(filename1,filename1,1,2,0);
 

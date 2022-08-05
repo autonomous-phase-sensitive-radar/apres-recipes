@@ -31,11 +31,11 @@ disp(['Loading data from ',  SD_card_directory]);  % so that it goes in the log 
 resolution = 1; % Default 1 - coarse resolution. 0 is for fine resolution
 expected_gap_hours = 4;
 percent_error = 0.05;
-%if mode == 0
+if mode == 0
     [gap_starts,gap_durations] = check_dates_vs_time(myFolder, resolution, expected_gap_hours, percent_error);
-%else
-%    [gap_starts,gap_durations] = check_dates_vs_time(myFolder, resolution, expected_gap_hours, percent_error, subfolder);
-%end
+else
+    [gap_starts,gap_durations] = check_dates_vs_time(myFolder, resolution, expected_gap_hours, percent_error, subfolder);
+end
 %% Clipping and attenuation check
 % Set a maximum number of plots to avoid too many popping up
 max_plots = 10;
@@ -56,6 +56,8 @@ amplitude = 0.25;
 if mode == 0
     [pct_clipped,flagged_clipped] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude);
 else
+    file_spacing = 1;
+    burst_spacing = 1;
     [pct_clipped,flagged_clipped] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude,subfolder);
 end
 % Switch to attenuation
@@ -63,6 +65,8 @@ clipping = 0;
 if mode == 0
     [pct_attenuated, flagged_attenuated] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude);
 else
+    file_spacing = 1;
+    burst_spacing = 1;
     [pct_attenuated, flagged_attenuated] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude,subfolder);
 end
 disp(strcat('Percentage of checked files flagged for clipping: ',int2str(pct_clipped),'%'));
@@ -71,14 +75,12 @@ disp(strcat('Percentage of checked files flagged for overattenuation: ',int2str(
 %% Vertical velocity checker 
 if mode == 0
     [c1,c2] = check_vertical_velocity(myFolder);
-else
-    [c1,c2] = check_vertical_velocity(myFolder, subfolder);
 end
 
 %% Generate summary report
 disp([newline,newline,'%%%%% SUMMARY REPORT %%%%%',newline]);
 disp('Potential Data Gaps (Duration, start time): ');
-if isempty(gap_starts) %== 0     I commented out the ==0 because I think it makes it the wrong way round, i.e. if isempty is not true that means its not empty, which is not what we want. 
+if isempty(gap_starts) 
     data_message = 'No data gaps identified.';
     disp(data_message);
 else
@@ -115,12 +117,16 @@ disp(newline)
 disp(strcat('Percentage of checked files flagged for clipping: ',int2str(pct_clipped),'%'));
 disp(strcat('Percentage of checked files flagged for overattenuation: ',int2str(pct_attenuated),'%'));
 
-disp([newline,'Strain rates:'])
-vv_msg_1 = 'Estimated strain rates from the first and last files are:';
-disp(vv_msg_1);
-vv_msg_2 = [num2str(c1(1),'%.3f'),' /day and ',num2str(c2(1),'%.3f'), ' /day, respectively'];
-disp(vv_msg_2)
-
+if mode == 0
+    disp([newline,'Strain rates:'])
+    vv_msg_1 = 'Estimated strain rates from the first and last files are:';
+    disp(vv_msg_1);
+    vv_msg_2 = [num2str(c1(1),'%.3f'),' /day and ',num2str(c2(1),'%.3f'), ' /day, respectively'];
+    disp(vv_msg_2)
+else
+    vv_msg_1 = '';
+    vv_msg_2 = '';
+end
 diary off;
 
 %% Display final message

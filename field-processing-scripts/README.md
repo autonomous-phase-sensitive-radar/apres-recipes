@@ -22,8 +22,12 @@ All the relevant files outside of the main field processing scripts (of which th
 ### Running the scripts in the field:
 - After plugging in the SD card, go to the file `run_script.m`. This is the main script that runs all the other checkscripts. 
 - It can be run right away as is, but there are some modifications that can be made to change your results. These specific modifications are detailed in the sections about their respective individual script instructions
-- Pressing the run button will start the script, which will then prompt you to select a directory in a popup. Click the SD card location and press open to select the SD card as your folder. The name of the SD card should be the last item in the path. 
-- Then, in sequence, the run script will check for data gaps with `check_dates_vs_time.m`, check for clipping/too much attenuation, and then check some example vertical velocity measurements. 
+- Pressing the run button will start the script, which will then prompt you to select a directory in a popup. Click the SD card location and press open to select the SD card as your folder. The name of the SD card should be the last item in the path. This path can also be hardcoded into the script by setting the variable `SD_card_directory` to the SD card path.
+- The script takes in two optional inputs: `site_name` and `mode`
+    - `site_name` allows the user to set the logfile name to refer to a specific site
+    - `mode` sets whether the script looks at data taken in unattended mode or attended mode. 
+- Then, in sequence, the run script will check for data gaps with `check_dates_vs_time.m`, check for clipping/too much attenuation with `check_clipping_attenuation.m`, and then check some example vertical velocity calculations with `check_vertical_velocity.m`. 
+- The script will output a log file titled "log-_sitename_-_mm-dd-yy-HH-MM_.txt", and the end of the log file will contain a summary of all the tests. Here the sitename is specified by the user and will default to 'unspecified-site' otherwise. The date and time is automatically generated when the script is run. 
 
 ### Running the scripts individually:
 There are 3 functions scripts to run: `check_dates_vs_time.m`, `check_clipping_attenuation.m`, and `check_vertical_velocity.m`. They are listed in order of importance/order to run. Their individual instructions are as follows.

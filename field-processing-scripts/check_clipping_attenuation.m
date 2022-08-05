@@ -51,9 +51,11 @@ end
 if ~exist('folder','var')
     % parameter does not exist, so default it to something
     subfolderID = fullfile(myFolder,'DIR*');
+    extension = '*.DAT';
 else
     % Get list of subfolders with the automated tests
     subfolderID = fullfile(myFolder,folder);
+    extension = '*.dat';
 end
 subfolders = dir(subfolderID);
 num_plots = 0;
@@ -62,7 +64,7 @@ total_files_checked = 0;
 flagged_files = [];
 for i=1:length(subfolders)
     subfolder = subfolders(i).name;
-    filePattern = fullfile(strcat(myFolder,subfolder),'*.DAT');
+    filePattern = fullfile(strcat(myFolder,subfolder),extension);
     % Get .DAT files in each folder
     fileList = dir(filePattern);
     % Iterate through all the files in each subfolder
