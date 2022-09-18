@@ -38,9 +38,10 @@ filename1 = strcat(myFolder,first_folder,'/',first_file); % can also modify to s
 % Case in attended mode and you are comparing between files and not bursts
 filePattern = fullfile(strcat(myFolder,first_folder),'*.dat');
 fileList = dir(filePattern);
-second_file = fileList(2).name;
-filename1_a = strcat(myFolder,first_folder,'/',second_file); 
-
+if exist('folder','var')
+    second_file = fileList(2).name;
+    filename1_a = strcat(myFolder,first_folder,'/',second_file); 
+end
 % Last file
 last_folder = subfolders(end).name;
 filePattern = fullfile(strcat(myFolder,last_folder),'*.DAT');
@@ -50,9 +51,10 @@ filename2 = strcat(myFolder,last_folder,'/',last_file); % can also modify to spe
 % Case in attended mode and you are comparing between files and not bursts
 filePattern = fullfile(strcat(myFolder,last_folder),'*.dat');
 fileList = dir(filePattern);
-second_last_file = fileList(end-1).name;
-filename2_a = strcat(myFolder,last_folder,'/',second_last_file);
-
+if exist('folder','var')
+    second_last_file = fileList(end-1).name;
+    filename2_a = strcat(myFolder,last_folder,'/',second_last_file);
+end
 
 % The commands below do the actual calculation of vertical velocity. 
 % You can mimic this format to do custom calculations
