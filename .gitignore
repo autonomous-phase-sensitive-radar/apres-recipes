@@ -6,3 +6,7 @@ field-processing-scripts/check_log_file.txt
 field-processing-scripts/.DS_Store
 field-processing-scripts/check_log_file.txt
 *.txt
+*.DAT
+field-processing-scripts/.DS_Store
+field-processing-scripts/data2022/.DS_Store
+field-processing-scripts/nicholls_utils/.DS_Store

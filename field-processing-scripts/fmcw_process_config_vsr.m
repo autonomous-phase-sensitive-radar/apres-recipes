@@ -17,7 +17,7 @@ cfg.fRange = [2e8 4e8]; % Tx frequency range to use - full range
 %cfg.fRange = [2.5e8 3.5e8];  % half bandwidth
 cfg.doManualChirpSelect = 0;
 cfg.fchirplist = [1:100];
-cfg.gchirplist = [57:100];
+cfg.gchirplist = [1:100];
 cfg.doClean = 0;
 cfg.noisePowerLimit = 0.0015; % allowable percent difference in power from quadtratic fit to chirpnum-power trend
 cfg.nNoisest = 2;
@@ -26,7 +26,7 @@ cfg.nNoisest = 2;
 cfg.p = 10; % padfactor (interpolation factor gi generating profile)
 % note: higher pad factor increases the likelihood of estimating the
 % correct bin  lag.
-cfg.maxRange = 1300; % maximum bed range
+cfg.maxRange = 1400; % maximum bed range
 cfg.winFun = @blackman;
 %cfg.winFun = @blackmanharris; % less spectral leakage so better to pick up near bed internals
 
@@ -36,13 +36,13 @@ cfg.noiseFloordB = -100; % Assumed level of noise
 
 % Find bed (or max range for vsr)
 cfg.maxDepthMethod = 'config'; % manual config auto
-cfg.maxDepthConfig = 1300;
+cfg.maxDepthConfig = 1400;
 cfg.bedMethod = 'xcor'; % 'ampThresh' 'maxAmp' 'xcor' ???
 cfg.ampThreshdB = -50; % dB - minimum bed strength
 cfg.bedSearchRange = [603 605.5]; % bed search range (m)
 
 % Bulk lag matching (co-registration)
-cfg.doBulkAllignment = 0; %
+cfg.doBulkAllignment = 1; %
 cfg.bulkAlignRange = [40 80];
 cfg.maxOffsetM = 10; % 10m recoverable offset near surface
 
@@ -59,7 +59,7 @@ cfg.doUseCoarseOffset = 1; % uses coarse offset determined above to specify roug
 cfg.doPolySmoothCoarseOffset = 1;
 cfg.polyOrder = 1;
 cfg.phaseDiffMethod = 'xcor'; % 'xcor' 'peakDiff'
-cfg.chunkWidth = 4; % between 4 to 8 is a good compromise
+cfg.chunkWidth = 8; % between 4 to 8 is a good compromise
 cfg.doSmartUnwrap = 1; % phase difference tracking to determine bin lag -
 % note SmartUnwrap only works with high pad factors - 10 works.
 % high strain rates may cause problems...
@@ -96,7 +96,7 @@ cfg.verbose = 1; % results to screen
 cfg.doSaveOutput = 0; % save mat file
 
 % Plots
-cfg.doPlotAll = 0; % plot lots of other stuff
+cfg.doPlotAll = 1; % plot lots of other stuff
 
 % Individual control of all plots
 cfg.doPlotAlignBulk = 0;

@@ -33,7 +33,7 @@ win = @blackman;
     name = filename;
     filename=[pathname,filename];
 
-    burstlist = 1:100; 
+    burstlist = 1:2; 
     chirplist = 1:maxchirps;
 
     getBurst = 1;
