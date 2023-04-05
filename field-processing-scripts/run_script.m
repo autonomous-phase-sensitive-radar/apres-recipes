@@ -1,133 +1,129 @@
-function run_script(site_name,mode)
-%% Main script to run all the checkscripts
-% Make parameters optional
-if ~exist('site_name','var')
-     % parameter does not exist, so default it to something
-      site_name = 'unspecified-site';
-end
-if ~exist('mode','var')
-     % parameter does not exist, so default it to something
-      mode = 0; % Default is unattended mode
-elseif mode == 1
-    subfolder = 'Survey*';
-end
-logfile_name = strcat('log-',site_name,'-',datestr(now,'mm-dd-yy-HH-MM'),'.txt');
-diary(logfile_name)
-
-%% close figures
-close all
-
-% add helper scripts to the path
-addpath('nicholls_utils')
-
+%function run_script(site_name)
+addpath 'C:\Users\apres\Desktop\ApRES\scripts\processing\field-processing-scripts'
+addpath 'C:\Users\apres\Desktop\ApRES\scripts\processing\field-processing-scripts\nicholls_utils'
+%logfile_name = strcat('log-',site_name,'-',datestr(now,'mm-dd-yy-HH-MM'),'.txt');
+%diary(logfile_name);
 % Select SD card path
-SD_card_directory = uigetdir(); % Can manually type the path as well
+SD_card_directory = uigetdir(); % Can manually type the path as well below
 %SD_card_directory = 'D:\';      % this is the path to the SD card, assuming no other hard drive has been plugged in previously.
-myFolder = strcat(SD_card_directory,'/');
-
-disp(['Loading data from ',  SD_card_directory]);  % so that it goes in the log file
-
-%% Data gap check
-resolution = 1; % Default 1 - coarse resolution. 0 is for fine resolution
-expected_gap_hours = 4;
-percent_error = 0.05;
-if mode == 0
-    [gap_starts,gap_durations] = check_dates_vs_time(myFolder, resolution, expected_gap_hours, percent_error);
-else
-    [gap_starts,gap_durations] = check_dates_vs_time(myFolder, resolution, expected_gap_hours, percent_error, subfolder);
+%disp(['Site ',site_name,' , data in: ', SD_card_directory])
+disp(' ')
+dat_info = dir(strcat(SD_card_directory,'/**/*.DAT')); 
+figure(1);
+plot(datetime([dat_info.datenum],'ConvertFrom','datenum'),[dat_info.bytes]./1e6,'.');
+xlabel('date of measurement');
+ylabel('file size (Mbytes)');
+total_data_str = ['Total Data Size: ',num2str(sum([dat_info.bytes])/1e9,3),' Gbytes'];
+title(total_data_str);
+disp(['Total .DAT File Count: ',num2str(size(dat_info,1))])
+disp(total_data_str);
+% Identify Anomalous Filesizes
+outlier_indices = find([dat_info.bytes] >305e6 | [dat_info.bytes] < 295e6);
+disp(' ')
+disp('Irregular file sizes on:');
+for i=outlier_indices
+    disp(dat_info(i).date)
 end
-%% Clipping and attenuation check
-% Set a maximum number of plots to avoid too many popping up
-max_plots = 10;
+disp(' ')
+disp('Quick plots from across season')
+ok_indices = setdiff(1:length(dat_info),outlier_indices);
 
-% Set how many files and/or bursts to skip over each iteration (for efficiency)
-% 1 would mean no skipping, 2 would mean every other one
-file_spacing = 2;
-burst_spacing = 2; % Recommend 20 for in-field 
+%% Plotting bursts and histograms and profiles from first, middle, last day
+to_plot_indices = [ok_indices(1), ok_indices(ceil(end/2)), ok_indices(end)];
+depthset = 1500;
+pad = 2;
+win = @blackman;
+for i=to_plot_indices
+    filename = strcat(dat_info(i).folder,'/',dat_info(i).name);
+    disp(['Plotting file:' dat_info(i).name])
+    vdat = Field_load(filename,1); 
+    if vdat.Code == -4 % burst not found in file
+            
+            disp('Burst not found in file');
 
-% Choose whether to detect clipping (1) or too much attenuation (0)
-clipping = 1;
+    elseif vdat.Code == -5
+            
+            disp(['No chirp starts found in file ' dat_info(i).name]);
+        
+    else %data is good
+        
+         % Split burst into various attenuator settings
+        
+         vdats = Field_burst_split_by_att(vdat);
 
-% Pick a max amplitude deemed to be too attenuated (clipping is at
-% amplitude of 1.25)
-amplitude = 0.25;
+        %% Plot
 
-% clipping
-if mode == 0
-    [pct_clipped,flagged_clipped] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude);
-else
-    file_spacing = 1;
-    burst_spacing = 1;
-    [pct_clipped,flagged_clipped] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude,subfolder);
-end
-% Switch to attenuation
-clipping = 0;
-if mode == 0
-    [pct_attenuated, flagged_attenuated] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude);
-else
-    file_spacing = 1;
-    burst_spacing = 1;
-    [pct_attenuated, flagged_attenuated] = check_clipping_attenuation(myFolder,max_plots,file_spacing, burst_spacing, clipping ,amplitude,subfolder);
-end
-disp(strcat('Percentage of checked files flagged for clipping: ',int2str(pct_clipped),'%'));
-disp(strcat('Percentage of checked files flagged for overattenuation: ',int2str(pct_attenuated),'%'));
+        vdat = Field_burst_mean(vdats(1));
+        chirpname = dat_info(i).name;% int2str(real(vdat.chirpAtt)) '+' int2str(imag(vdat.chirpAtt)) 'dB '];
+         [tax,hax,aax] = open_plot(vdat,chirpname);
+            
+            for j = 1:length(vdats)
+                vdat = Field_burst_mean(vdats(j));
+                axes(tax), hold on;
+                ht = plot(vdat.t,vdat.vif,'DisplayName',[int2str(real(vdat.chirpAtt)) '+' int2str(imag(vdat.chirpAtt)) 'dB ']); % signal
+                if any(round(vdat.vif,2)==0) || any(round(vdat.vif,2)==2.5)
+                    disp(['!!!!!!! The signal might be clipped in ' chirpname '!!!!!!!!']); 
+                end
 
-%% Vertical velocity checker 
-if mode == 0
-    [c1,c2] = check_vertical_velocity(myFolder);
-else
-    [c1,c2] = check_vertical_velocity(myFolder,subfolder);
-end
+                axes(hax), hold on;
+                hh = histogram(vdat.vif,'Orientation','horizontal','DisplayName',[int2str(real(vdat.chirpAtt)) '+' int2str(imag(vdat.chirpAtt)) 'dB ']);
 
-%% Generate summary report
-disp([newline,newline,'%%%%% SUMMARY REPORT %%%%%',newline]);
-disp('Potential Data Gaps (Duration, start time): ');
-if isempty(gap_starts) 
-    data_message = 'No data gaps identified.';
-    disp(data_message);
-else
-    for i=1:length(gap_starts)
-        disp([' ', num2str(gap_durations(i)), ' hours:   ',datestr(gap_starts(i))])
+                % phase process data
+                [rc,~,~,su] = fmcw_range(vdat,pad,depthset,win);
+                axes(aax), hold on
+                plot(rc,20*log10(abs(su)),'DisplayName',[int2str(real(vdat.chirpAtt)) '+' int2str(imag(vdat.chirpAtt)) 'dB ']);
+                
+            end
+            axes(tax);
+            legend;
+            axes(hax);
+            legend;
+            plot(linspace(1,max(hh.Values())+100,size(vdat.t,2)),repmat(0,size(vdat.t)),'r','HandleVisibility','off'); 
+            plot(linspace(1,max(hh.Values())+100,size(vdat.t,2)),repmat(2.5,size(vdat.t)),'r','HandleVisibility','off');
+            xlim([0 max(hh.Values())+100])
+            axes(aax);
+            xlim([0 depthset]);
+            legend;
+            
+           
+            
+        
     end
-    data_message = ['See ', logfile_name, ' for list of ', int2str(length(gap_starts)), ' flagged data gaps.'];  
-end
-
-disp([newline,'Files flagged for clipping'])
-if size(flagged_clipped,1) == 0
-    disp('No files flagged for clipping');
-    clipping_message = 'No clipping detected.';
-else
-    for i = 1:size(flagged_clipped,1)
-        disp([' ', flagged_clipped(i,:)])
-    end
-    clipping_message = ['See ', logfile_name, ' for list of ', int2str(size(flagged_clipped,1)), ' flagged clipped files (', int2str(pct_clipped),'%).'];
 end
 
 
-disp([newline,'Files flagged for overattenuation'])
-if size(flagged_attenuated,1) == 0
-    disp('No files flagged for overattenuation');
-    attenuation_message = 'No overattenuation detected.';
-else
-    for i = 1:size(flagged_attenuated,1)
-        disp([' ', flagged_attenuated(i,:)])
-    end
-    attenuation_message = ['See ', logfile_name, ' for list of ', int2str(size(flagged_attenuated,1)), ' flagged overattenuated files: (', int2str(pct_attenuated),'%).'];
- end
+function [tax,hax,aax] = open_plot(vdat,chirpname)
+    figure('Position',[0.1557    0.1530    1.0413    0.4686]*1e3);
+    t=tiledlayout(3,4);
 
-disp(newline)
-disp(strcat('Percentage of checked files flagged for clipping: ',int2str(pct_clipped),'%'));
-disp(strcat('Percentage of checked files flagged for overattenuation: ',int2str(pct_attenuated),'%'));
+    tax = nexttile(1,[2,2]);
+    set(tax,'tag','tax');
+    title('Voltage')
+    hold on
+    box on
+    xlabel('Time (s)')
+    ylabel('Voltage')
+    ylim([-0.25 2.75])
+    plot(vdat.t,repmat(0,size(vdat.t)),'r','HandleVisibility','off'); % ADC saturation level
+    plot(vdat.t,repmat(2.5,size(vdat.t)),'r','HandleVisibility','off'); % ADC saturation level
+    
+    hax = nexttile(3,[2,2]);
+    set(hax,'tag','hax');
+    title('Histogram of voltage')
+    xlabel('Count')
+    ylabel('Voltage')
+    hold on
+    box on
+    ylim([-0.25 2.75])
+    
 
-disp([newline,'Strain rates:'])
-vv_msg_1 = 'Estimated strain rates from the first and last files are:';
-disp(vv_msg_1);
-vv_msg_2 = [num2str(c1(1),'%.3f'),' /day and ',num2str(c2(1),'%.3f'), ' /day, respectively'];
-disp(vv_msg_2)
+    % Amp subplot
+    aax = nexttile(9,[1,4]);
+    set(aax,'tag','aax')
+    title('Amplitude (dB)')
+    box on
+    xlabel('Range (m)');
+    ylabel('amplitude (dB Vrms)')
+    title(t,chirpname);
 
-diary off;
-
-%% Display final message
-CreateStruct.Interpreter = 'tex';
-CreateStruct.WindowStyle = 'non-modal';
-msg = msgbox(['\fontsize{20}', data_message,newline, clipping_message,newline, attenuation_message, newline, vv_msg_1, newline, vv_msg_2],"Results", CreateStruct);
+end
