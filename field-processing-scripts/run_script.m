@@ -1,12 +1,16 @@
-%function run_script(site_name)
+function run_script(site_name)
+if nargin <1
+    site_name = 'unknown_site';
+end
+close all;
 addpath 'C:\Users\apres\Desktop\ApRES\scripts\processing\field-processing-scripts'
 addpath 'C:\Users\apres\Desktop\ApRES\scripts\processing\field-processing-scripts\nicholls_utils'
-%logfile_name = strcat('log-',site_name,'-',datestr(now,'mm-dd-yy-HH-MM'),'.txt');
-%diary(logfile_name);
+logfile_name = strcat('log-',site_name,'-',datestr(now,'mm-dd-yy-HH-MM'),'.txt');
+diary(logfile_name);
 % Select SD card path
-SD_card_directory = uigetdir(); % Can manually type the path as well below
-%SD_card_directory = 'D:\';      % this is the path to the SD card, assuming no other hard drive has been plugged in previously.
-%disp(['Site ',site_name,' , data in: ', SD_card_directory])
+%SD_card_directory = uigetdir(); % Can manually type the path as well below
+SD_card_directory = 'D:\';      % this is the path to the SD card, assuming no other hard drive has been plugged in previously.
+disp(['Site ',site_name,' , data in: ', SD_card_directory])
 disp(' ')
 dat_info = dir(strcat(SD_card_directory,'/**/*.DAT')); 
 figure(1);
@@ -90,7 +94,7 @@ for i=to_plot_indices
         
     end
 end
-
+end
 
 function [tax,hax,aax] = open_plot(vdat,chirpname)
     figure('Position',[0.1557    0.1530    1.0413    0.4686]*1e3);
