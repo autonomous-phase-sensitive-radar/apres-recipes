@@ -1,4 +1,4 @@
-function run_script_file(numplots)
+function run_script_single(numplots)
     if nargin==0
         numplots = 1;
     end
@@ -8,7 +8,7 @@ function run_script_file(numplots)
     addpath 'C:\Users\apres\Desktop\ApRES\scripts\processing\field-processing-scripts'
     addpath 'C:\Users\apres\Desktop\ApRES\scripts\processing\field-processing-scripts\nicholls_utils'
     logfile_name = strcat('log-',file,'-',datestr(now,'mm-dd-yy-HH-MM'),'.txt');
-    diary(logfile_name);
+    %diary(logfile_name);
     filecontents = fileread(filename);
     % Use regexp to find the datetimes in a file
     expression = 'Time stamp=....-..-.. ..:..:..';
@@ -24,7 +24,7 @@ function run_script_file(numplots)
     pad = 2;
     win = @blackman;
     for i=file_spaced
-        disp(['Plotting file:',file,datetimes(i)])
+        disp(['Plotting file: ' char(file) ', 'char(datetimes(i))])
         vdat = Field_load(filename,i); 
         if vdat.Code == -4 % burst not found in file
                 
@@ -43,7 +43,7 @@ function run_script_file(numplots)
             %% Plot
     
             vdat = Field_burst_mean(vdats(1));
-            chirpname = [file,datetimes(i)];% int2str(real(vdat.chirpAtt)) '+' int2str(imag(vdat.chirpAtt)) 'dB '];
+            chirpname = [char(file) ', ' char(datetimes(i))];% int2str(real(vdat.chirpAtt)) '+' int2str(imag(vdat.chirpAtt)) 'dB '];
             [tax,hax,aax] = open_plot(vdat,chirpname);
                 
                 for j = 1:length(vdats)
