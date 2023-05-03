@@ -14,7 +14,7 @@ function run_script_single(numplots)
     expression = 'Time stamp=....-..-.. ..:..:..';
     datetimes = regexp(filecontents,expression,"match");
     max_bursts = length(datetimes);
-    disp(max_bursts)
+    disp(['Total bursts: ' num2str(max_bursts)])
     if numplots == 1
         file_spaced = [1];
     else
@@ -24,7 +24,7 @@ function run_script_single(numplots)
     pad = 2;
     win = @blackman;
     for i=file_spaced
-        disp(['Plotting file: ' char(file) ', 'char(datetimes(i))])
+        disp(['Plotting file: ' char(file) ', ' char(datetimes(i))])
         vdat = Field_load(filename,i); 
         if vdat.Code == -4 % burst not found in file
                 
