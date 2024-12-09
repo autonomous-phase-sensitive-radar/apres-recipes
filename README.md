@@ -8,5 +8,5 @@ Multiple researchers and groups of researchers have invented (and reinvented) di
 We very much welcome contributions from the community on any aspect of ApRES data analysis. 
 A suggested structure for contributions is a folder in the root of this repo containing (1) a README.md file that minimally explains the purpose of the code, and (2) a sub-directory called `code` containing the code base in whatever format you like. 
 Optionally, the README file can also contain information on dependencies and usage of the code and/or examples with example data. 
-Contributions can be in the form of [pull requests]([url](https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3/)). 
-Feel free to start submit an [issue]([url](https://github.com/autonomous-phase-sensitive-radar/apres-recipes/issues)) to start a conversation about a possible contribution too!
+Contributions can be in the form of [pull requests](https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3/). 
+Feel free to start submit an [issue](https://github.com/autonomous-phase-sensitive-radar/apres-recipes/issues) to start a conversation about a possible contribution too!
