@@ -1,14 +1,21 @@
-# Field Processing Scripts
+# Field quality control scripts
+
+George Lu, July 2022
+
+## Purpose
+
+This repository contains processing scripts by George Lu used in 2022 Greenland field work. Instructions for their use are below. This folder also contains links to some data that one can test the scripts with (`data_links.md`). It also contains a spreadsheet used to calculate ApRES storage space and power usage (`ApRESCalculator.xlsx`). It is currently calculating the numbers based on the May 2022 deployment of ApRES.  
+
 
 ## Instructions for Installation and Setup of August 2022 check scripts
 
 ### Accessing code:
-These instructions come with the files saved at: https://github.com/autonomous-phase-sensitive-radar/processing.
+These instructions come with the files saved at: https://github.com/autonomous-phase-sensitive-radar/apres-recipes
 
 To access the latest version of this code, go to the link above, click the button that says `Code`, and click the option to download ZIP. Unzip the folder, and then you will have the code accessible.
 
 ### Code requirements:
-These scripts require the latest version of MATLAB installed, and that MATLAB needs to work offline. This means making sure that the license is properly renewed (for more information regarding these licenses, go to: https://www.cuit.columbia.edu/content/matlab). Additionally, MATLAB needs to have the Signal Processing Toolbox along with the Statistics Toolbox installed. Furthermore, these scripts call upon additional utility scripts from Keith Nicholls. They are included in the Github folder with the processing scripts as of July 18, 2022. When opening MATLAB, the folder containing these utility scripts (named `nicholls_utils`) should be added to the path. 
+These scripts require the latest version of MATLAB installed, and in order to use the scripts in the field, MATLAB needs to work offline. This means making sure that the license is properly renewed (for more information regarding these licenses, go to: https://www.cuit.columbia.edu/content/matlab). Additionally, MATLAB needs to have the Signal Processing Toolbox along with the Statistics Toolbox installed. Furthermore, these scripts call upon additional utility scripts from Keith Nicholls. They are included in the Github folder with the processing scripts as of July 18, 2022. When opening MATLAB, the folder containing these utility scripts (named `nicholls_utils`) should be added to the path. 
 
 The directory structure should look like: 
 > … whatever directory the processing folder is stored in
